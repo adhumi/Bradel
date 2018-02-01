@@ -3,7 +3,6 @@ import UIKit
 class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableView: UITableView
     var viewModel: VMType?
-    var activityView: UIActivityIndicatorView?
 
     init(style: UITableViewStyle) {
         tableView = UITableView(frame: CGRect.zero, style: style)
@@ -110,29 +109,6 @@ class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDel
         viewModel?.reloadDataFinished = { [weak self] error in
             self?.tableView.reloadData()
         }
-    }
-
-    func showActivityView() {
-        let activity = self.activityView ?? UIActivityIndicatorView(activityIndicatorStyle: .gray)
-
-        if self.activityView == nil {
-            activity.translatesAutoresizingMaskIntoConstraints = false
-            self.view.addSubview(activity)
-            view.centerXAnchor.constraint(equalTo: activity.centerXAnchor).isActive = true
-            view.centerYAnchor.constraint(equalTo: activity.centerYAnchor).isActive = true
-            self.activityView = activity
-        }
-
-        activity.startAnimating()
-    }
-
-    func hideActivityView() {
-        if let activity = self.activityView {
-            activity.stopAnimating()
-            activity.removeFromSuperview()
-        }
-
-        self.activityView = nil
     }
 
     // Data
