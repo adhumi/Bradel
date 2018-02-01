@@ -1,11 +1,3 @@
-//
-//  Bradel.h
-//  Bradel
-//
-//  Created by Adrien Humilière on 01/02/2018.
-//  Copyright © 2018 Adrien Humilière. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for Bradel.
