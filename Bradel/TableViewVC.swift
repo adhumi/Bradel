@@ -1,24 +1,24 @@
 import UIKit
 
-class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var tableView: UITableView
-    var viewModel: VMType?
+public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    public var tableView: UITableView
+    public var viewModel: VMType?
 
-    init(style: UITableViewStyle) {
+    public init(style: UITableViewStyle) {
         tableView = UITableView(frame: CGRect.zero, style: style)
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         tableView = UITableView(frame: CGRect.zero, style: .grouped)
         super.init(coder: aDecoder)
     }
 
-    func typeMapping() -> [AnyTypeID: AnyClass] {
+    public func typeMapping() -> [AnyTypeID: AnyClass] {
         return [:]
     }
 
-    func registerViews() {
+    public func registerViews() {
         let mapping = typeMapping()
         for view in mapping {
             let nibName = String(describing: view.value)
@@ -44,7 +44,7 @@ class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDel
         }
     }
 
-    override func viewDidLayoutSubviews() {
+    public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         guard let headerView = tableView.tableHeaderView else { return }
 
@@ -57,7 +57,7 @@ class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDel
         }
     }
 
-    override func viewDidLoad() {
+   public override func viewDidLoad() {
         super.viewDidLoad()
 
         registerViews()
@@ -113,20 +113,20 @@ class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDel
 
     // Data
 
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.sections.count ?? 0
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.sections[section].rows.count ?? 0
     }
 
     // TableView Elements
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cellVM = viewModel?.viewModel(at: indexPath) else {
             fatalError ("No view model provided for cell at indexPath {\(indexPath.section), \(indexPath.row)}")
         }
@@ -138,7 +138,7 @@ class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDel
 
         return cell
     }
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let viewModel = self.viewModel?.viewModelForHeader(inSection: section) else { return nil }
         guard typeMapping()[viewModel.typeID] is UIView.Type else { return nil }
 
@@ -149,7 +149,7 @@ class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDel
 
         return headerView
     }
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let viewModel = self.viewModel?.viewModelForFooter(inSection: section) else { return nil }
         guard typeMapping()[viewModel.typeID] is UIView.Type else { return nil }
 
@@ -163,19 +163,20 @@ class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDel
 
     // Heights
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
     // Selection
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+    
+    public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return viewModel?.canSelectViewModel(at: indexPath) ?? false
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.selectViewModel(at: indexPath)
     }
 
-    func headerFooterView(for viewModel: IdentifiableVMProtocol) -> UIView? {
+    public func headerFooterView(for viewModel: IdentifiableVMProtocol) -> UIView? {
         guard let headerFooterViewClass = typeMapping()[viewModel.typeID] as? UIView.Type else { return nil }
         let headerFooterView = headerFooterViewClass.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 40))
 

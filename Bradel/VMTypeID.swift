@@ -1,6 +1,6 @@
 import Foundation
 
-protocol VMTypeID: Hashable {
+public protocol VMTypeID: Hashable {
     var rawValue: String { get }
 }
 
@@ -38,22 +38,22 @@ private final class _AnyTypeIDBox<Concrete: VMTypeID>: _AnyTypeIDBase {
     }
 }
 
-final class AnyTypeID: VMTypeID {
+public final class AnyTypeID: VMTypeID {
     private let box: _AnyTypeIDBase
 
     init<Concrete: VMTypeID>(_ concrete: Concrete) {
         box = _AnyTypeIDBox(concrete)
     }
 
-    var rawValue: String {
+    public var rawValue: String {
         return box.rawValue
     }
 
-    var hashValue: Int {
+    public var hashValue: Int {
         return box.hashValue
     }
 
-    static func == (lhs: AnyTypeID, rhs: AnyTypeID) -> Bool {
+    public static func == (lhs: AnyTypeID, rhs: AnyTypeID) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
 }

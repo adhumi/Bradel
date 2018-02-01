@@ -2,29 +2,29 @@ import Foundation
 
 // Protocols definition
 
-protocol ConfigurableWithVM: class {
+public protocol ConfigurableWithVM: class {
     func configure(with viewModel: IdentifiableVMProtocol)
 }
 
-protocol ConfigurableTableViewCell: ConfigurableWithVM {
+public protocol ConfigurableTableViewCell: ConfigurableWithVM {
     associatedtype Model: IdentifiableVMProtocol
 
     func configure(with object: Model)
 }
 
-extension ConfigurableTableViewCell {
-    func configure(with viewModel: IdentifiableVMProtocol) {
+public extension ConfigurableTableViewCell {
+    public func configure(with viewModel: IdentifiableVMProtocol) {
         if let model = viewModel as? Model {
             self.configure(with: model)
         }
     }
 }
 
-protocol IdentifiableVMProtocol {
+public protocol IdentifiableVMProtocol {
     var typeID: AnyTypeID { get }
 }
 
-protocol TableViewVMProtocol {
+public protocol TableViewVMProtocol {
     var title: String? { get }
     var sections: [TableViewSectionVMProtocol] { get }
     var header: IdentifiableVMProtocol? { get }
@@ -50,60 +50,60 @@ protocol TableViewVMProtocol {
     var reloadDataFinished: ((Error?) -> Void)? { get set }
 }
 
-protocol TableViewSectionVMProtocol {
+public protocol TableViewSectionVMProtocol {
     var rows: [TableViewCellVMProtocol] { get }
     var header: IdentifiableVMProtocol? { get }
     var footer: IdentifiableVMProtocol? { get }
 }
 
-protocol TableViewCellVMProtocol: IdentifiableVMProtocol {
+public protocol TableViewCellVMProtocol: IdentifiableVMProtocol {
     var isSelectable: Bool { get }
     func select()
 }
 
 // Extend protocols for implementation of methods and default values for properties
 
-extension IdentifiableVMProtocol {
+public extension IdentifiableVMProtocol {
 }
 
-extension TableViewVMProtocol {
-    var title: String? { return nil }
-    var sections: [TableViewSectionVMProtocol] { return [] }
-    var header: IdentifiableVMProtocol? { return nil }
-    var footer: IdentifiableVMProtocol? { return nil }
+public extension TableViewVMProtocol {
+    public var title: String? { return nil }
+    public var sections: [TableViewSectionVMProtocol] { return [] }
+    public var header: IdentifiableVMProtocol? { return nil }
+    public var footer: IdentifiableVMProtocol? { return nil }
 
-    func numberOfSections() -> Int {
+    public func numberOfSections() -> Int {
         return sections.count
     }
 
-    func numberOfRows(inSection section: Int) -> Int {
+    public func numberOfRows(inSection section: Int) -> Int {
         return sections[section].rows.count
     }
 
-    func viewModel(at indexPath: IndexPath) -> TableViewCellVMProtocol {
+    public func viewModel(at indexPath: IndexPath) -> TableViewCellVMProtocol {
         return sections[indexPath.section].rows[indexPath.row]
     }
 
-    func viewModelForHeader(inSection section: Int) -> IdentifiableVMProtocol? {
+    public func viewModelForHeader(inSection section: Int) -> IdentifiableVMProtocol? {
         return sections[section].header
     }
 
-    func viewModelForFooter(inSection section: Int) -> IdentifiableVMProtocol? {
+    public func viewModelForFooter(inSection section: Int) -> IdentifiableVMProtocol? {
         return sections[section].footer
     }
 
-    func canSelectViewModel(at indexPath: IndexPath) -> Bool {
+    public func canSelectViewModel(at indexPath: IndexPath) -> Bool {
         return viewModel(at: indexPath).isSelectable
     }
 
-    func selectViewModel(at indexPath: IndexPath) {
+    public func selectViewModel(at indexPath: IndexPath) {
         viewModel(at: indexPath).select()
     }
 
-    func reloadData() {
+    public func reloadData() {
     }
 
-    func firstIndexPath(withViewModelTypeID typeID: AnyTypeID) -> IndexPath? {
+    public func firstIndexPath(withViewModelTypeID typeID: AnyTypeID) -> IndexPath? {
         var sectionIndex: Int = 0
         var rowIndex: Int = 0
         for section in sections {
@@ -119,75 +119,75 @@ extension TableViewVMProtocol {
         return nil
     }
 
-    var titleDidChange: ((String?) -> Void)? {
+    public var titleDidChange: ((String?) -> Void)? {
         get { return nil }
         set {}
     }
-    var headerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
+    public var headerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
         get { return nil }
         set {}
     }
-    var footerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
+    public var footerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
         get { return nil }
         set {}
     }
-    var reloadDataFinished: ((Error?) -> Void)? {
+    public var reloadDataFinished: ((Error?) -> Void)? {
         get { return nil }
         set {}
     }
 
 }
 
-extension TableViewSectionVMProtocol {
-    var rows: [TableViewCellVMProtocol] { return [] }
-    var header: IdentifiableVMProtocol? { return nil }
-    var footer: IdentifiableVMProtocol? { return nil }
+public extension TableViewSectionVMProtocol {
+    public var rows: [TableViewCellVMProtocol] { return [] }
+    public var header: IdentifiableVMProtocol? { return nil }
+    public var footer: IdentifiableVMProtocol? { return nil }
 }
 
-extension TableViewCellVMProtocol {
-    var isSelectable: Bool { return false }
-    func select() {
+public extension TableViewCellVMProtocol {
+    public var isSelectable: Bool { return false }
+    public func select() {
 
     }
 }
 
 // Convenience structures, useful for simple cases were we don't need to create a new struct/class for a/part of a view model.
 
-struct TableViewVM: TableViewVMProtocol {
-    var title: String? {
+public struct TableViewVM: TableViewVMProtocol {
+    public var title: String? {
         didSet {
             titleDidChange?(title)
         }
     }
-    var sections: [TableViewSectionVMProtocol] = []
-    var header: IdentifiableVMProtocol? {
+    public var sections: [TableViewSectionVMProtocol] = []
+    public var header: IdentifiableVMProtocol? {
         didSet {
             headerDidChange?(header)
         }
     }
-    var footer: IdentifiableVMProtocol? {
+    public var footer: IdentifiableVMProtocol? {
         didSet {
             footerDidChange?(footer)
         }
     }
 
-    var titleDidChange: ((String?) -> Void)?
-    var headerDidChange: ((IdentifiableVMProtocol?) -> Void)?
-    var footerDidChange: ((IdentifiableVMProtocol?) -> Void)?
-    var reloadDataFinished: ((Error?) -> Void)?
+    public var titleDidChange: ((String?) -> Void)?
+    public var headerDidChange: ((IdentifiableVMProtocol?) -> Void)?
+    public var footerDidChange: ((IdentifiableVMProtocol?) -> Void)?
+    public var reloadDataFinished: ((Error?) -> Void)?
 }
 
-struct TableViewSectionVM: TableViewSectionVMProtocol {
-    var rows: [TableViewCellVMProtocol]
-    var header: IdentifiableVMProtocol?
-    var footer: IdentifiableVMProtocol?
+public struct TableViewSectionVM: TableViewSectionVMProtocol {
+    public var rows: [TableViewCellVMProtocol]
+    public var header: IdentifiableVMProtocol?
+    public var footer: IdentifiableVMProtocol?
 
     init(rows: [TableViewCellVMProtocol] = []) {
         self.rows = rows
     }
 }
 
-struct TableViewCellVM: TableViewCellVMProtocol {
-    var typeID: AnyTypeID
-    var isSelectable: Bool
+public struct TableViewCellVM: TableViewCellVMProtocol {
+    public var typeID: AnyTypeID
+    public var isSelectable: Bool
 }
