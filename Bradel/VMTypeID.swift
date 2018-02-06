@@ -45,15 +45,15 @@ public final class AnyTypeID: VMTypeID {
         box = _AnyTypeIDBox(concrete)
     }
 
-    public var rawValue: String {
+    open var rawValue: String {
         return box.rawValue
     }
 
-    public var hashValue: Int {
+    open var hashValue: Int {
         return box.hashValue
     }
 
-    public static func == (lhs: AnyTypeID, rhs: AnyTypeID) -> Bool {
+    open static func == (lhs: AnyTypeID, rhs: AnyTypeID) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
 }

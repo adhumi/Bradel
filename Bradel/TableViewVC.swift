@@ -1,6 +1,6 @@
 import UIKit
 
-public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDelegate, UITableViewDataSource {
+open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDelegate, UITableViewDataSource {
     public var tableView: UITableView
     public var viewModel: VMType?
 
@@ -14,11 +14,11 @@ public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITable
         super.init(coder: aDecoder)
     }
 
-    public func typeMapping() -> [AnyTypeID: AnyClass] {
+    open func typeMapping() -> [AnyTypeID: AnyClass] {
         return [:]
     }
 
-    public func registerViews() {
+    open func registerViews() {
         let mapping = typeMapping()
         for view in mapping {
             let nibName = String(describing: view.value)
@@ -44,7 +44,7 @@ public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITable
         }
     }
 
-    public override func viewDidLayoutSubviews() {
+    open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         guard let headerView = tableView.tableHeaderView else { return }
 
@@ -57,7 +57,7 @@ public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITable
         }
     }
 
-   public override func viewDidLoad() {
+   open override func viewDidLoad() {
         super.viewDidLoad()
 
         registerViews()
@@ -113,20 +113,20 @@ public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITable
 
     // Data
 
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.sections.count ?? 0
     }
 
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     }
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.sections[section].rows.count ?? 0
     }
 
     // TableView Elements
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cellVM = viewModel?.viewModel(at: indexPath) else {
             fatalError ("No view model provided for cell at indexPath {\(indexPath.section), \(indexPath.row)}")
         }
@@ -138,7 +138,7 @@ public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITable
 
         return cell
     }
-    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let viewModel = self.viewModel?.viewModelForHeader(inSection: section) else { return nil }
         guard typeMapping()[viewModel.typeID] is UIView.Type else { return nil }
 
@@ -149,7 +149,7 @@ public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITable
 
         return headerView
     }
-    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let viewModel = self.viewModel?.viewModelForFooter(inSection: section) else { return nil }
         guard typeMapping()[viewModel.typeID] is UIView.Type else { return nil }
 
@@ -163,20 +163,20 @@ public class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITable
 
     // Heights
 
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
     // Selection
     
-    public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+    open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return viewModel?.canSelectViewModel(at: indexPath) ?? false
     }
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel?.selectViewModel(at: indexPath)
     }
 
-    public func headerFooterView(for viewModel: IdentifiableVMProtocol) -> UIView? {
+    open func headerFooterView(for viewModel: IdentifiableVMProtocol) -> UIView? {
         guard let headerFooterViewClass = typeMapping()[viewModel.typeID] as? UIView.Type else { return nil }
         let headerFooterView = headerFooterViewClass.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 40))
 
