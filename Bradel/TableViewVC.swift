@@ -2,7 +2,11 @@ import UIKit
 
 open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDelegate, UITableViewDataSource {
     public var tableView: UITableView
-    public var viewModel: VMType?
+    public var viewModel: VMType? {
+        didSet {
+            title = viewModel?.title
+        }
+    }
 
     public var clearsSelectionOnViewWillAppear: Bool = false
 
