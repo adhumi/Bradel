@@ -41,7 +41,7 @@ private final class _AnyTypeIDBox<Concrete: VMTypeID>: _AnyTypeIDBase {
 public final class AnyTypeID: VMTypeID {
     private let box: _AnyTypeIDBase
 
-    init<Concrete: VMTypeID>(_ concrete: Concrete) {
+    public init<Concrete: VMTypeID>(_ concrete: Concrete) {
         box = _AnyTypeIDBox(concrete)
     }
 
