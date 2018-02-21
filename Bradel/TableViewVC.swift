@@ -81,8 +81,8 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
-        topLayoutGuide.bottomAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
-        bottomLayoutGuide.topAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
         view.leadingAnchor.constraint(equalTo: tableView.leadingAnchor).isActive = true
         view.trailingAnchor.constraint(equalTo: tableView.trailingAnchor).isActive = true
 
