@@ -182,7 +182,7 @@ public struct TableViewSectionVM: TableViewSectionVMProtocol {
     public var header: IdentifiableVMProtocol?
     public var footer: IdentifiableVMProtocol?
 
-    init(rows: [TableViewCellVMProtocol] = []) {
+    public init(rows: [TableViewCellVMProtocol] = []) {
         self.rows = rows
     }
 }
