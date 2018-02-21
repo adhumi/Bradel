@@ -4,6 +4,8 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     public var tableView: UITableView
     public var viewModel: VMType?
 
+    public var clearsSelectionOnViewWillAppear: Bool = false
+
     public init(style: UITableViewStyle) {
         tableView = UITableView(frame: CGRect.zero, style: style)
         super.init(nibName: nil, bundle: nil)
@@ -108,6 +110,14 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
 
         viewModel?.reloadDataFinished = { [weak self] error in
             self?.tableView.reloadData()
+        }
+    }
+
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: animated)
         }
     }
 
