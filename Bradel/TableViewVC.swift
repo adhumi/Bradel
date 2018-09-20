@@ -10,7 +10,7 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
 
     public var clearsSelectionOnViewWillAppear: Bool = false
 
-    public init(style: UITableViewStyle) {
+    public init(style: UITableView.Style) {
         tableView = UITableView(frame: CGRect.zero, style: style)
         super.init(nibName: nil, bundle: nil)
     }
@@ -54,7 +54,7 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         super.viewDidLayoutSubviews()
         guard let headerView = tableView.tableHeaderView else { return }
 
-        let size = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        let size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
 
         if headerView.frame.size.height != size.height {
             headerView.frame.size.height = size.height
@@ -72,11 +72,11 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44 // Default cell height
-        tableView.sectionHeaderHeight = UITableViewAutomaticDimension
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = tableView.style == .plain ? 22 : 10 // Default header height
-        tableView.sectionFooterHeight = UITableViewAutomaticDimension
+        tableView.sectionFooterHeight = UITableView.automaticDimension
         tableView.estimatedSectionFooterHeight = tableView.style == .plain ? 22 : 10 // Default footer height
         tableView.tableHeaderView = nil
         tableView.tableFooterView = nil
@@ -180,7 +180,7 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     // Heights
 
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 
     // Selection
