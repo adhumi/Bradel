@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode10
+osx_image: xcode10.1
 xcode_project: Bradel.xcodeproj
 xcode_scheme: Bradel
 xcode_sdk: iphoneos12.0
