@@ -16,7 +16,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: Ga3gPcDA8ZPoUOacw3IgkPxmKdNRvz/5zObi3KkzwgZFrUF2A4D2uYCC5OvUsL0j+Zi/9KK4li9NN3X+HdirquRJ6+8t1cH0fiWOS4JIsnj2Vgy47O3pnu2Q2Muwaq3+0bRwNyShdI3K6LVznVhrSWiOQmaY0Fq7QzzeXG9xH633fFN6jC1e1QHYo360ILKIBAPO0mxreM6TvvJe1qQYjzaeLGDdlFTe3+0RVQ4Agbf4NocotMtMdf9A5LPav2lg63GVwTx+QhQ3hKKCxGRd8OG8YsXkcA3pfX22ya3g7Tjj/MbC+9n1n67WdFouY+YVa5tN9CCB+tHafkK/1NauUtPCX+IaMC0Vi3AwZW0yGncbtyhqRtRVlxoUFUUuT1SFCYZrlGhu2DnU5rOCBVfrQ44cGzZSBg9zGnclnPb3LtB0+hexRjCxmvlIgrHrOexl1kDdgEvhMF7yHTZnrR9zU2LpVzXWsPtFCxlbdNv4rj31bfpv2cfE7oiwPPBmpOaMbaM4lOalg1LNpL4Zk/01SHa0kZruz7i49nn4dsf/N7nccujLtXoCV7+2or9KQjZfvBrT2eUi3tpb+UqrFf8Hw6rSu6L7BRkuTEE/CbscLJ858LDcOGt4EnizJLnV9HUNsblgZsDdBEANZQLL3EMYoa+J0eBaatEzW9NapQ2LZwE=
+    secure: $GITHUB_API_KEY
   file: "$FRAMEWORK_NAME.framework.zip"
   skip_cleanup: true
   on:
