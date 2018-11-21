@@ -214,6 +214,34 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     // Scroll View
 
     open func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+
+    }
+
+    open func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+
+    }
+
+    open func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+
+    }
+
+    open func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+
+    }
+
+    open func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        return true
+    }
+
+    open func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+
+    }
+
+    open func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+
+    }
+
+    open func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+
     }
 }
