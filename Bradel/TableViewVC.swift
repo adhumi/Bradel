@@ -210,4 +210,10 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
 
         return headerFooterView
     }
+
+    // Scroll View
+
+    open func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
 }
