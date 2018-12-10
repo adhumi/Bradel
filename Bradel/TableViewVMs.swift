@@ -51,6 +51,8 @@ public protocol TableViewVMProtocol {
 }
 
 public protocol TableViewSectionVMProtocol {
+    var typeID: AnyTypeID? { get }
+
     var rows: [TableViewCellVMProtocol] { get }
     var header: IdentifiableVMProtocol? { get }
     var footer: IdentifiableVMProtocol? { get }
@@ -139,6 +141,8 @@ public extension TableViewVMProtocol {
 }
 
 public extension TableViewSectionVMProtocol {
+    public var typeID: AnyTypeID? { return nil }
+
     public var rows: [TableViewCellVMProtocol] { return [] }
     public var header: IdentifiableVMProtocol? { return nil }
     public var footer: IdentifiableVMProtocol? { return nil }
