@@ -156,7 +156,6 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     }
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let viewModel = self.viewModel?.viewModelForHeader(inSection: section) else { return nil }
-        guard typeMapping()[viewModel.typeID] is UIView.Type else { return nil }
 
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewModel.typeID.rawValue)
         if let headerView = headerView as? ConfigurableWithVM {
@@ -167,7 +166,6 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     }
     open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let viewModel = self.viewModel?.viewModelForFooter(inSection: section) else { return nil }
-        guard typeMapping()[viewModel.typeID] is UIView.Type else { return nil }
 
         let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewModel.typeID.rawValue)
         if let footerView = footerView as? ConfigurableWithVM {
