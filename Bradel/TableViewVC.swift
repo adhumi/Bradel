@@ -155,11 +155,16 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         return cell
     }
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        print("viewForHeaderInSection")
         guard let viewModel = self.viewModel?.viewModelForHeader(inSection: section) else { return nil }
 
+        print("viewModel: \(viewModel)")
+
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: viewModel.typeID.rawValue)
+        print("headerView: \(headerView.debugDescription)")
         if let headerView = headerView as? ConfigurableWithVM {
             headerView.configure(with: viewModel)
+            print("headerView configured")
         }
 
         return headerView
@@ -182,6 +187,7 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     }
 
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        print("heightForHeaderInSection")
         return UITableView.automaticDimension
     }
 
