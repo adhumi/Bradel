@@ -196,6 +196,18 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         return UITableView.automaticDimension
     }
 
+    open func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.estimatedRowHeight
+    }
+
+    open func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return tableView.estimatedSectionHeaderHeight
+    }
+
+    open func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+        return tableView.estimatedSectionFooterHeight
+    }
+
     // Selection
     
     open func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
