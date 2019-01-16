@@ -272,6 +272,6 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     }
 
     open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        return nil
+        return []
     }
 }
