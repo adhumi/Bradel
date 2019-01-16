@@ -267,10 +267,6 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
 
     }
 
-    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-    }
-
     open func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return true
     }
