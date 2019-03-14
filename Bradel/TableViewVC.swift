@@ -78,8 +78,6 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         tableView.estimatedSectionHeaderHeight = tableView.style == .plain ? 22 : 10 // Default header height
         tableView.sectionFooterHeight = UITableView.automaticDimension
         tableView.estimatedSectionFooterHeight = tableView.style == .plain ? 22 : 10 // Default footer height
-        tableView.tableHeaderView = nil
-        tableView.tableFooterView = nil
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
 
