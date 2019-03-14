@@ -24,7 +24,7 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         return [:]
     }
 
-    open func registerViews() {
+    private func registerViews() {
         let mapping = typeMapping()
         for view in mapping {
             let nibName = String(describing: view.value)
