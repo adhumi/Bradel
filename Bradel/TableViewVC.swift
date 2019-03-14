@@ -29,23 +29,23 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         for view in mapping {
             let nibName = String(describing: view.value)
             switch view.value {
-                case is UITableViewCell.Type:
-                    if let nibPath = Bundle.main.path(forResource: nibName, ofType: "nib"), FileManager.default.fileExists(atPath: nibPath) {
-                        let nib = UINib(nibName: String(describing: view.value), bundle: nil)
-                        tableView.register(nib, forCellReuseIdentifier: view.key.rawValue)
-                    } else {
-                        tableView.register(view.value, forCellReuseIdentifier: view.key.rawValue)
-                    }
-                    break
-                case is UITableViewHeaderFooterView.Type:
-                    if let nibPath = Bundle.main.path(forResource: nibName, ofType: "nib"), FileManager.default.fileExists(atPath: nibPath) {
-                        let nib = UINib(nibName: String(describing: view.value), bundle: nil)
-                        tableView.register(nib, forHeaderFooterViewReuseIdentifier: view.key.rawValue)
-                    } else {
-                        tableView.register(view.value, forHeaderFooterViewReuseIdentifier: view.key.rawValue)
-                    }
-                    break
-                default: break
+            case is UITableViewCell.Type:
+                if let nibPath = Bundle.main.path(forResource: nibName, ofType: "nib"), FileManager.default.fileExists(atPath: nibPath) {
+                    let nib = UINib(nibName: String(describing: view.value), bundle: nil)
+                    tableView.register(nib, forCellReuseIdentifier: view.key.rawValue)
+                } else {
+                    tableView.register(view.value, forCellReuseIdentifier: view.key.rawValue)
+                }
+                break
+            case is UITableViewHeaderFooterView.Type:
+                if let nibPath = Bundle.main.path(forResource: nibName, ofType: "nib"), FileManager.default.fileExists(atPath: nibPath) {
+                    let nib = UINib(nibName: String(describing: view.value), bundle: nil)
+                    tableView.register(nib, forHeaderFooterViewReuseIdentifier: view.key.rawValue)
+                } else {
+                    tableView.register(view.value, forHeaderFooterViewReuseIdentifier: view.key.rawValue)
+                }
+                break
+            default: break
             }
         }
     }
@@ -63,7 +63,7 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
         }
     }
 
-   open override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         registerViews()
