@@ -13,7 +13,7 @@ public protocol ConfigurableTableViewCell: ConfigurableWithVM {
 }
 
 public extension ConfigurableTableViewCell {
-    public func configure(with viewModel: IdentifiableVMProtocol) {
+    func configure(with viewModel: IdentifiableVMProtocol) {
         if let model = viewModel as? Model {
             self.configure(with: model)
         }
@@ -67,43 +67,43 @@ public extension IdentifiableVMProtocol {
 }
 
 public extension TableViewVMProtocol {
-    public var title: String? { return nil }
-    public var sections: [TableViewSectionVMProtocol] { return [] }
-    public var header: IdentifiableVMProtocol? { return nil }
-    public var footer: IdentifiableVMProtocol? { return nil }
+    var title: String? { return nil }
+    var sections: [TableViewSectionVMProtocol] { return [] }
+    var header: IdentifiableVMProtocol? { return nil }
+    var footer: IdentifiableVMProtocol? { return nil }
 
-    public func numberOfSections() -> Int {
+    func numberOfSections() -> Int {
         return sections.count
     }
 
-    public func numberOfRows(inSection section: Int) -> Int {
+    func numberOfRows(inSection section: Int) -> Int {
         return sections[section].rows.count
     }
 
-    public func viewModel(at indexPath: IndexPath) -> TableViewCellVMProtocol {
+    func viewModel(at indexPath: IndexPath) -> TableViewCellVMProtocol {
         return sections[indexPath.section].rows[indexPath.row]
     }
 
-    public func viewModelForHeader(inSection section: Int) -> IdentifiableVMProtocol? {
+    func viewModelForHeader(inSection section: Int) -> IdentifiableVMProtocol? {
         return sections[section].header
     }
 
-    public func viewModelForFooter(inSection section: Int) -> IdentifiableVMProtocol? {
+    func viewModelForFooter(inSection section: Int) -> IdentifiableVMProtocol? {
         return sections[section].footer
     }
 
-    public func canSelectViewModel(at indexPath: IndexPath) -> Bool {
+    func canSelectViewModel(at indexPath: IndexPath) -> Bool {
         return viewModel(at: indexPath).isSelectable
     }
 
-    public func selectViewModel(at indexPath: IndexPath) {
+    func selectViewModel(at indexPath: IndexPath) {
         viewModel(at: indexPath).select()
     }
 
-    public func reloadData() {
+    func reloadData() {
     }
 
-    public func firstIndexPath(withViewModelTypeID typeID: AnyTypeID) -> IndexPath? {
+    func firstIndexPath(withViewModelTypeID typeID: AnyTypeID) -> IndexPath? {
         var sectionIndex: Int = 0
         var rowIndex: Int = 0
         for section in sections {
@@ -119,19 +119,19 @@ public extension TableViewVMProtocol {
         return nil
     }
 
-    public var titleDidChange: ((String?) -> Void)? {
+    var titleDidChange: ((String?) -> Void)? {
         get { return nil }
         set {}
     }
-    public var headerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
+    var headerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
         get { return nil }
         set {}
     }
-    public var footerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
+    var footerDidChange: ((IdentifiableVMProtocol?) -> Void)? {
         get { return nil }
         set {}
     }
-    public var reloadDataFinished: ((Error?) -> Void)? {
+    var reloadDataFinished: ((Error?) -> Void)? {
         get { return nil }
         set {}
     }
@@ -139,14 +139,14 @@ public extension TableViewVMProtocol {
 }
 
 public extension TableViewSectionVMProtocol {
-    public var rows: [TableViewCellVMProtocol] { return [] }
-    public var header: IdentifiableVMProtocol? { return nil }
-    public var footer: IdentifiableVMProtocol? { return nil }
+    var rows: [TableViewCellVMProtocol] { return [] }
+    var header: IdentifiableVMProtocol? { return nil }
+    var footer: IdentifiableVMProtocol? { return nil }
 }
 
 public extension TableViewCellVMProtocol {
-    public var isSelectable: Bool { return false }
-    public func select() {
+    var isSelectable: Bool { return false }
+    func select() {
 
     }
 }
