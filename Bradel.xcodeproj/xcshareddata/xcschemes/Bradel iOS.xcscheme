@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-               BuildableName = "Bradel.framework"
-               BlueprintName = "Bradel"
+               BuildableName = "Bradel_iOS.framework"
+               BlueprintName = "Bradel iOS"
                ReferencedContainer = "container:Bradel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-            BuildableName = "Bradel.framework"
-            BlueprintName = "Bradel"
+            BuildableName = "Bradel_iOS.framework"
+            BlueprintName = "Bradel iOS"
             ReferencedContainer = "container:Bradel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,8 +65,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-            BuildableName = "Bradel.framework"
-            BlueprintName = "Bradel"
+            BuildableName = "Bradel_iOS.framework"
+            BlueprintName = "Bradel iOS"
             ReferencedContainer = "container:Bradel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,8 +83,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-            BuildableName = "Bradel.framework"
-            BlueprintName = "Bradel"
+            BuildableName = "Bradel_iOS.framework"
+            BlueprintName = "Bradel iOS"
             ReferencedContainer = "container:Bradel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
