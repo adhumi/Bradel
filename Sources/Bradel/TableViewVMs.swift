@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import Foundation
 
 // Protocols definition
@@ -191,3 +192,4 @@ public struct TableViewCellVM: TableViewCellVMProtocol {
     public var typeID: AnyTypeID
     public var isSelectable: Bool
 }
+#endif
