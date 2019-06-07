@@ -256,7 +256,7 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     }
 
     // Edition
-
+    #if !os(tvOS)
     open func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
 
     }
@@ -265,11 +265,24 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
 
     }
 
+    open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        return []
+    }
+    #endif
+
     open func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-    open func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        return []
+    // Focus
+
+    #if os(tvOS)
+    open func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
+
+    open func indexPathForPreferredFocusedView(in tableView: UITableView) -> IndexPath? {
+        return nil
+    }
+    #endif
 }
