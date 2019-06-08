@@ -8,17 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A6FCF2BA2023A32700E1DC7F /* Bradel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6FCF2B02023A32600E1DC7F /* Bradel.framework */; };
-		A6FCF2BF2023A32700E1DC7F /* BradelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2BE2023A32700E1DC7F /* BradelTests.swift */; };
 		A6FCF2C12023A32700E1DC7F /* Bradel.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FCF2B32023A32700E1DC7F /* Bradel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6FCF2CD2023A35600E1DC7F /* TableViewVMs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CA2023A35500E1DC7F /* TableViewVMs.swift */; };
-		A6FCF2CE2023A35600E1DC7F /* TableViewVMs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CA2023A35500E1DC7F /* TableViewVMs.swift */; };
-		A6FCF2CF2023A35600E1DC7F /* VMTypeID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CB2023A35600E1DC7F /* VMTypeID.swift */; };
-		A6FCF2D02023A35600E1DC7F /* VMTypeID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CB2023A35600E1DC7F /* VMTypeID.swift */; };
-		A6FCF2D12023A35600E1DC7F /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CC2023A35600E1DC7F /* TableViewVC.swift */; };
-		A6FCF2D22023A35600E1DC7F /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CC2023A35600E1DC7F /* TableViewVC.swift */; };
-		BBD2A78022895AE200121880 /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CC2023A35600E1DC7F /* TableViewVC.swift */; };
-		BBD2A78122895AE200121880 /* TableViewVMs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CA2023A35500E1DC7F /* TableViewVMs.swift */; };
-		BBD2A78222895AE200121880 /* VMTypeID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FCF2CB2023A35600E1DC7F /* VMTypeID.swift */; };
+		BB5B5AD222AABF970098F928 /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = BB5B5AD122AABF970098F928 /* Sources */; };
+		BB5B5AD322AABF970098F928 /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = BB5B5AD122AABF970098F928 /* Sources */; };
+		BB5B5AD422AABF970098F928 /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = BB5B5AD122AABF970098F928 /* Sources */; };
+		BB5B5ADE22AB11BA0098F928 /* BradelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5B5ADC22AB11BA0098F928 /* BradelTests.swift */; };
+		BB5B5ADF22AB11BA0098F928 /* XCTestManifests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5B5ADD22AB11BA0098F928 /* XCTestManifests.swift */; };
 		BBD2A78522895AE200121880 /* Bradel.h in Headers */ = {isa = PBXBuildFile; fileRef = A6FCF2B32023A32700E1DC7F /* Bradel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -37,11 +32,10 @@
 		A6FCF2B32023A32700E1DC7F /* Bradel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bradel.h; sourceTree = "<group>"; };
 		A6FCF2B42023A32700E1DC7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6FCF2B92023A32700E1DC7F /* BradelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BradelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6FCF2BE2023A32700E1DC7F /* BradelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BradelTests.swift; sourceTree = "<group>"; };
-		A6FCF2C02023A32700E1DC7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A6FCF2CA2023A35500E1DC7F /* TableViewVMs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewVMs.swift; sourceTree = "<group>"; };
-		A6FCF2CB2023A35600E1DC7F /* VMTypeID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VMTypeID.swift; sourceTree = "<group>"; };
-		A6FCF2CC2023A35600E1DC7F /* TableViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
+		BB5B5AD122AABF970098F928 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
+		BB5B5ADC22AB11BA0098F928 /* BradelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BradelTests.swift; sourceTree = "<group>"; };
+		BB5B5ADD22AB11BA0098F928 /* XCTestManifests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestManifests.swift; sourceTree = "<group>"; };
+		BB5B5AE022AB11DC0098F928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBD2A78A22895AE200121880 /* Bradel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bradel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,8 +68,9 @@
 		A6FCF2A62023A32600E1DC7F = {
 			isa = PBXGroup;
 			children = (
+				BB5B5AD122AABF970098F928 /* Sources */,
 				A6FCF2B22023A32700E1DC7F /* Bradel */,
-				A6FCF2BD2023A32700E1DC7F /* BradelTests */,
+				BB5B5ADA22AB11BA0098F928 /* Tests */,
 				A6FCF2B12023A32600E1DC7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,20 +88,26 @@
 		A6FCF2B22023A32700E1DC7F /* Bradel */ = {
 			isa = PBXGroup;
 			children = (
-				A6FCF2CC2023A35600E1DC7F /* TableViewVC.swift */,
-				A6FCF2CA2023A35500E1DC7F /* TableViewVMs.swift */,
-				A6FCF2CB2023A35600E1DC7F /* VMTypeID.swift */,
 				A6FCF2B32023A32700E1DC7F /* Bradel.h */,
 				A6FCF2B42023A32700E1DC7F /* Info.plist */,
 			);
 			path = Bradel;
 			sourceTree = "<group>";
 		};
-		A6FCF2BD2023A32700E1DC7F /* BradelTests */ = {
+		BB5B5ADA22AB11BA0098F928 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A6FCF2BE2023A32700E1DC7F /* BradelTests.swift */,
-				A6FCF2C02023A32700E1DC7F /* Info.plist */,
+				BB5B5ADB22AB11BA0098F928 /* BradelTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		BB5B5ADB22AB11BA0098F928 /* BradelTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB5B5AE022AB11DC0098F928 /* Info.plist */,
+				BB5B5ADC22AB11BA0098F928 /* BradelTests.swift */,
+				BB5B5ADD22AB11BA0098F928 /* XCTestManifests.swift */,
 			);
 			path = BradelTests;
 			sourceTree = "<group>";
@@ -237,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5B5AD222AABF970098F928 /* Sources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5B5AD422AABF970098F928 /* Sources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5B5AD322AABF970098F928 /* Sources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6FCF2D12023A35600E1DC7F /* TableViewVC.swift in Sources */,
-				A6FCF2CD2023A35600E1DC7F /* TableViewVMs.swift in Sources */,
-				A6FCF2CF2023A35600E1DC7F /* VMTypeID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,10 +272,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6FCF2D22023A35600E1DC7F /* TableViewVC.swift in Sources */,
-				A6FCF2CE2023A35600E1DC7F /* TableViewVMs.swift in Sources */,
-				A6FCF2BF2023A32700E1DC7F /* BradelTests.swift in Sources */,
-				A6FCF2D02023A35600E1DC7F /* VMTypeID.swift in Sources */,
+				BB5B5ADE22AB11BA0098F928 /* BradelTests.swift in Sources */,
+				BB5B5ADF22AB11BA0098F928 /* XCTestManifests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +281,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBD2A78022895AE200121880 /* TableViewVC.swift in Sources */,
-				BBD2A78122895AE200121880 /* TableViewVMs.swift in Sources */,
-				BBD2A78222895AE200121880 /* VMTypeID.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +426,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Bradel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-iOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;
@@ -455,7 +451,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Bradel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-iOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;
@@ -468,10 +464,9 @@
 		A6FCF2C82023A32700E1DC7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E873B24XVN;
-				INFOPLIST_FILE = BradelTests/Info.plist;
+				INFOPLIST_FILE = Tests/BradelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.adhumi.BradelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,10 +478,9 @@
 		A6FCF2C92023A32700E1DC7F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E873B24XVN;
-				INFOPLIST_FILE = BradelTests/Info.plist;
+				INFOPLIST_FILE = Tests/BradelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.adhumi.BradelTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,7 +503,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Bradel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-tvOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;
@@ -535,7 +529,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Bradel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 0.4.0;
+				MARKETING_VERSION = 0.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-tvOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;

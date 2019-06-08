@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 
 open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -286,3 +287,4 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     }
     #endif
 }
+#endif
