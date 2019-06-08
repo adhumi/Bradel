@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-               BuildableName = "Bradel_iOS.framework"
+               BuildableName = "Bradel.framework"
                BlueprintName = "Bradel iOS"
                ReferencedContainer = "container:Bradel.xcodeproj">
             </BuildableReference>
@@ -27,6 +27,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
+            BuildableName = "Bradel.framework"
+            BlueprintName = "Bradel iOS"
+            ReferencedContainer = "container:Bradel.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -39,17 +48,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-            BuildableName = "Bradel_iOS.framework"
-            BlueprintName = "Bradel iOS"
-            ReferencedContainer = "container:Bradel.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -65,13 +63,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-            BuildableName = "Bradel_iOS.framework"
+            BuildableName = "Bradel.framework"
             BlueprintName = "Bradel iOS"
             ReferencedContainer = "container:Bradel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -83,7 +79,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A6FCF2AF2023A32600E1DC7F"
-            BuildableName = "Bradel_iOS.framework"
+            BuildableName = "Bradel.framework"
             BlueprintName = "Bradel iOS"
             ReferencedContainer = "container:Bradel.xcodeproj">
          </BuildableReference>
