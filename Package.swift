@@ -9,9 +9,8 @@ let package = Package(
         .tvOS(.v12)
     ],
     products: [
-        .library(
-            name: "Bradel",
-            targets: ["Bradel"]),
+        .library(name: "Bradel", type: .dynamic, targets: ["Bradel"]),
+        .library(name: "BradelStatic", type: .static, targets: ["Bradel"]),
     ],
     targets: [
         .target(
