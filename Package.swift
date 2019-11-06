@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "Bradel",
     platforms: [
-        .iOS(.v9),
+        .iOS(.v12),
         .tvOS(.v12)
     ],
     products: [
