@@ -15,7 +15,9 @@ private class _AnyTypeIDBase: VMTypeID {
 
     var rawValue: String { fatalError("Must override") }
 
-    var hashValue: Int { fatalError("Must override") }
+    func hash(into hasher: inout Hasher) {
+        fatalError("Must override")
+    }
 
     static func == (lhs: _AnyTypeIDBase, rhs: _AnyTypeIDBase) -> Bool {
         fatalError("Must override")
@@ -33,8 +35,8 @@ private final class _AnyTypeIDBox<Concrete: VMTypeID>: _AnyTypeIDBase {
         return concrete.rawValue
     }
 
-    override var hashValue: Int {
-        return concrete.hashValue
+    override func hash(into hasher: inout Hasher) {
+        hasher.combine(concrete)
     }
 }
 
@@ -49,8 +51,8 @@ public final class AnyTypeID: VMTypeID {
         return box.rawValue
     }
 
-    public var hashValue: Int {
-        return box.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(box)
     }
 
     public static func == (lhs: AnyTypeID, rhs: AnyTypeID) -> Bool {
