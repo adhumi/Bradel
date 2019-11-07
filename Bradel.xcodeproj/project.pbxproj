@@ -459,7 +459,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-iOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;
@@ -488,7 +488,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-iOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;
@@ -554,7 +554,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-tvOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;
@@ -584,7 +584,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.5.0;
+				MARKETING_VERSION = 0.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.adhumi.Bradel-tvOS";
 				PRODUCT_MODULE_NAME = Bradel;
 				PRODUCT_NAME = Bradel;
