@@ -135,6 +135,9 @@ open class TableViewVC<VMType: TableViewVMProtocol>: UIViewController, UITableVi
     open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     }
 
+    open func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    }
+
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.sections[section].rows.count ?? 0
     }
